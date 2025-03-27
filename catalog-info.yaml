@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ze5139u21-nodejs-gitops
+  description: This is GitOps manifest for ze5139u21-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ze5139u21-nodejs
+    backstage.io/kubernetes-id: ze5139u21-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ze5139u21-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ze5139u21-nodejs
